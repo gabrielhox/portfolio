@@ -1,670 +1,125 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="d43bf856-c344-40b4-bcbe-aa4092d27e2e" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_henri_rousseau_1907.jpg" style="object-position:center 26.349999999999994%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👔</span></div><h1 class="page-title">Resume</h1></header><div class="page-body"><blockquote id="4f2afe85-26aa-4c73-96cc-b38fadc095c2" class="">I&#x27;m an accountant and software developer. With 2+ years of experience on tax, book-keeping and financial accountant. Bind to that I’ve been developing software for 1 year, as of June 2022. Based in Parana State, southern Brazil. </blockquote><h1 id="8cca2165-6e3f-408a-ab69-dc3e3bcd522e" class="">☎️ Contact information</h1><p id="8ed863d1-892a-4f2c-b75e-5fa73ce4ee89" class="">joaog7419@gmail.com</p><p id="d7e23a82-0adc-4f26-80c7-8dd9a522ec29" class="">+55 44 9 9706 4014</p><hr id="8b0fa6e1-59ad-4924-a295-664cf811e46a"/><h1 id="a1d5abbb-85b9-413c-9f57-c740483f8bcc" class=""><strong>👩🏻‍💻</strong> Work experience</h1><h2 id="4a3093ec-39d6-45b5-9a43-bea1632fb3fc" class="">Data Analyst - Full Time</h2><p id="eaa4e76d-97bf-4725-be40-02f6af8ec665" class=""><strong><mark class="highlight-gray">Alvo Contabilidade</mark></strong><mark class="highlight-gray"><em>, PR/Brazil - (05/2021 - 08/2021)</em></mark></p><p id="bcdd18a7-19af-481f-8e19-db02a2aa2589" class=""><strong>Analysis, management, data organization, SPED* magnetic files, systemic integration between Questor* (for Gestran*, Excel, Elotech Contábil*, Sagres*, among others). Working with layout files compatibility of accounting, tax and payroll modules. In addition to organizing financial statements, graphs and predictive analysis of client companies. Organization of internal files, creation of protocols that meet ISO 9001 standards, as well as documentation of internal procedures and creation of onboardings. Server and network maintenance, assignment of tasks and segregation of duties of workers using the tool &quot;Monday&quot; and &quot;Slack&quot; for communication, configuration of external and internal remote connections, among others.</strong></p><p id="113103ee-8226-42d1-aa57-228571143acb" class="">Taxation systems and federal tax information software from Brazil.</p><h2 id="370608c9-f936-44d8-990b-51594f59c2d5" class="">Accounting Analyst - Internship</h2><p id="a173b822-ceac-4a65-917c-04607e594fd0" class="block-color-gray"><strong>Martinelli Advocacy</strong><em>, PR\Brazil – (03/2020 - 04/2021)</em></p><p id="00e58131-4f31-496a-9b70-7c57a1777184" class=""><strong>Management of Reimbursements for Agribusinesses, mainly, calculation of PIS* and COFINS*, use of SPED (creation and validation), extraction of data from eCAC* and ReceitaBX*.</strong></p><p id="0ae87cd0-cb27-49a4-bbbb-c224e7bdaf5b" class="">Taxation systems and federal tax information software from Brazil.</p><h2 id="97fb2b5f-2f52-4fb3-bf43-1fa1c05f2463" class="">Internship</h2><p id="05fad9e2-09ea-41d1-82f0-ec7f278d73ad" class="block-color-gray"><strong>1 SRI de Maringa</strong><em>, PR\Brazil – (02/2019 - 02/2020)</em></p><p id="e0e1ddce-f55e-4d1b-8541-f5c474ff484d" class=""><strong>Data input in the system, customer service, writing, dispatch and processing of official letters as well as document analysis and financial profiling of customers.</strong></p><h2 id="1b86caee-c998-4517-b39a-6537449021aa" class="">Internship</h2><p id="9818130f-e1d8-48f8-9408-d9d034b22a1a" class="block-color-gray"><strong>Ministerio Publico do Estado do Parana</strong><em>, PR\Brazil – (02/2016 - 02/2017)</em></p><p id="1214667f-a1c4-4376-bacb-f45f03e52881" class=""><strong>Organization of processes, protocol letters, receive, assemble and dispatch processes, organization of files, digitization of processes, reception, scheduling of hearings, issuance of notices of hearings.</strong></p><hr id="e4a8796d-07cf-4729-a3e3-47e877be777b"/><h1 id="92f90054-0249-4453-8a20-61dcecf62699" class="">🛠 Skills</h1><h2 id="dbf71975-dda6-4a8d-8868-38a60dcb4ee6" class="">💻 Technology</h2><h3 id="7f5080ab-8347-4081-ade8-2fe417b41621" class="">Python ⭐⭐⭐⭐</h3><p id="f27b73b8-36ed-4639-adfe-5a818d19fb8b" class="">My &quot;native&quot; programming language, I&#x27;ve worked with it for over 4 years. I&#x27;ve used it in data science, with Pandas for data modeling. Also used NumPy and Matplotlib heavily to create mathematical and statistical models. </p><h3 id="c38a4333-4269-4a41-bc35-9079d583f65d" class="">JavaScript ⭐⭐</h3><p id="9c6678fa-4842-4ab1-9c68-498a10705e4f" class="">The second language, which I am currently learning. The main course of application for me, also lies on the possibility of creating dashboards with logic processing on the client side, using Chart.js and other libraries. </p><h3 id="24175fa8-9f66-4bfe-9913-b6081ef09915" class="">VBA ⭐⭐⭐</h3><p id="90e6969a-a727-4ca1-a81e-1f21d93090f5" class="">I can do pretty good automation schemes using Visual Basic for Applications, have using for a couple of years, to help with book keeping and financial demands.</p><h3 id="f02ca7d1-29bd-427b-b53e-35b77ff90eff" class="">Vue.js ⭐</h3><p id="88d5bd1e-a163-4810-af4f-24c2b7d1fb81" class="">Within the process of learning JS, for me, it is incorporated the learning of Vue.js since it is my framework of choice, due to its simplicity, versatility and package size.</p><h3 id="f2fd9c92-d175-42e4-a0a8-0d64f2d8350b" class="">Steganography ⭐⭐⭐⭐</h3><p id="f3afa5d3-79ab-4ec1-9c0f-0dfe5d7f393b" class="">I am always on the look for different and creative ways to encode, compress and convey information. It never ceases to blow my mind, the different ways one can hide important information on plain sight.</p><h3 id="04068d0c-c538-4597-acde-cef0f9aa3518" class="">Graphic Design ⭐⭐⭐</h3><p id="d0c62845-956f-4f35-a701-4f9ecf5cedd7" class="">Although my main focus is to code, I do have some skills on graphic design, 2D and 3D design as well as animation. Always looking for improving to be the best I can possibly be, on each area. One of my hobbies is to do digital restoration on old photographs and documents. I am comfortable with the Adobe suite (Photoshop, InDesign, Illustrator and XD)</p><h3 id="e2f6cb19-3d0d-4985-addb-c4ea59c34974" class="">HTML and CSS ⭐⭐</h3><p id="2a57b036-edbe-4c5e-8259-c4e9b4899454" class="">I don&#x27;t do much website creation, rather I use HTML and CSS to render graphics, reports, datasheets, invoices, to PDF and other formats. Since its fast, reliable and uses the built-in browser of most operation systems.</p><hr id="158b1e52-d1c6-42eb-ad2d-592d8aaf86cf"/><h2 id="f68c4092-7a45-42d3-aae4-a3491544eed6" class="">🗣 Languages</h2><div id="59f177e7-f2ed-4f72-ae04-49deb6ad562a" class="column-list"><div id="ba963f03-8926-44c3-8ea3-e15e8055b9b1" style="width:50%" class="column"><h3 id="e3e8a78f-1266-4852-84c2-e530cf3260f8" class="">Portuguese 🇧🇷</h3><p id="0ca3437a-29f6-43ba-9ffd-42b1bb360faf" class="">Native Speaker</p><h3 id="8b6f3e91-f014-4d93-8dd4-db5c2f6cdc35" class="">English 🇺🇸</h3><p id="3151ea07-912d-4128-bebe-b283bab7f9d6" class="">Fluent - C2 Advanced</p></div><div id="921508f0-1a0d-4d12-82a9-aa1a26bd4763" style="width:50%" class="column"><h3 id="cf4d103e-43e9-4d2d-a40e-5b01816e37b0" class="">Russian 🇷🇺</h3><p id="bc90fcc5-e326-48a6-8f9d-57f0394abccf" class="">Intermediate</p><h3 id="f5d31d91-eff7-48ae-aaaf-f16d7711232b" class="">Chinese (Mandarin) 🇨🇳</h3><p id="b1c002a1-b2fd-499c-aab2-488fec55337a" class="">Beginner</p></div></div><h3 id="8690b667-064a-4882-8208-9bc798cc98f9" class="">French 🇫🇷</h3><p id="40ccc13f-1065-489a-bac3-7e9fa003383d" class="">Intermediate</p><hr id="254e9cb0-7731-4da6-a077-b70e07e1fb7d"/><h1 id="197ca5fb-3709-48ec-99ac-542367ef7868" class="">📖 My Reading</h1><ul id="57db5910-4579-4b0e-a9e2-3fdcaffc971d" class="bulleted-list"><li style="list-style-type:disc">The Moscow Rules - Jonna and Tony Mendez (Book)</li></ul><ul id="98ea089c-7c14-4f8d-bfc9-657226b0687f" class="bulleted-list"><li style="list-style-type:disc">Deep Undercover - Jack Barsky (Book)</li></ul><ul id="3f6a6ed4-3247-4c69-b5c7-35b0793549ac" class="bulleted-list"><li style="list-style-type:disc">The Invisible Life of Addie LaRue - V. E. Schwab (Novel)</li></ul><ul id="e5952dc3-8e14-4c7d-87c6-33d1ce28bbe1" class="bulleted-list"><li style="list-style-type:disc">WaveNet: A Generative Model for Raw Audio - van der Oord et al. (Paper)</li></ul><hr id="e40690b3-7880-467d-bdee-7718ecf5e1d8"/><h1 id="48689173-4559-48b3-932d-b746f49848b4" class="">📚 Education</h1><h2 id="1aeb7d60-b9b3-4f56-a0a2-b801f33e91b9" class=""><strong>Post Graduation on Data Science (Ongoing)</strong></h2><p id="5da759c8-d5f8-4ab4-a061-3b2436fde61e" class=""><mark class="highlight-gray"><em>2023 - End</em></mark></p><p id="a2595d9d-9a56-4422-9011-79641c225ffc" class=""><mark class="highlight-gray"><em>2022 - Beginning</em></mark></p><p id="89ea89f6-4b68-4888-b32d-7d45f83ba6f5" class=""><strong>Uniasselvi</strong> - Brazil</p><h2 id="f3eb20c1-6e0a-430a-afdd-db9ef12d67f8" class=""><strong>Bachelor&#x27;s Degree in Accounting (Finished)</strong></h2><p id="e51c8f66-3f80-40a9-b612-3e357e37f56b" class="block-color-gray"><em>2021 - Graduated</em></p><p id="8318a0a3-00c0-47a3-9424-d65046beaa76" class="block-color-gray"><em>2018 - Beginning</em></p><p id="26130353-aebd-4fc4-a7fb-b53f33038f13" class=""><strong>UniCesumar</strong> - Brazil</p><hr id="31096ea8-70a7-41b0-a7b6-652fe10f8d19"/><h1 id="68bf88d1-b504-4548-81fb-654b2bc4a278" class="">🧗🏼‍♂️ Hobbies</h1><h2 id="8ad63c87-0081-46dd-8bfe-a37590854904" class="">Cycling</h2><p id="5a241f52-8bd1-4b87-b497-e4831219c917" class="">Road circuits, intense and endurance focus training.</p><h2 id="be3a4ac3-80fb-45db-b83a-999deaae5a6a" class="">Tennis</h2><p id="f3a2214e-f4a8-44ee-bb48-bb9e793a5d1c" class="">Recreational matches with friends and family at weekends.</p><h2 id="bd1e6241-6dcf-471c-b14b-215e5dad6cc1" class="">Video Games</h2><p id="88f4fd3e-4024-4656-956c-eae4c751d3d8" class="">Destiny and Destiny 2, COD MWIII, Diablo Immortal</p><h2 id="c90f9319-e439-4552-bc3e-94e806eb195f" class="">Music</h2><p id="35a023a6-f788-440e-b5d1-57cef4fe66a4" class="">Love to sing (not saying that I&#x27;m good at it though), play acoustic guitar or just enjoy some good tunes (<mark class="highlight-gray"><em>Someone That Loves You - HONNE </em></mark>| Favorite song of all times).</p><p id="0e0590b0-4034-48ab-a972-03e8ca8cf14f" class="">
-</p></div></article></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- hero page -->
+    <header class="hero">
+        <div id="icons-background"></div>
+        <div id="hero-title">SCHNEIDER</div>
+        <div id="hero-nav-buttons">
+            <button class="hero-action" id="bio">ABOUT ME</button>
+            <button class="hero-action" id="projects">PROJECTS</button>
+            <button class="hero-action" id="articles">ARTICLES</button>
+        </div>
+    </header>
+
+    <!-- bio page section -->
+    <div class="bio">
+
+        <!-- bio page welcoming section -->
+        <div id="bio-top-section">
+            <div id="bio-portrait">
+                <div id="bio-portrait-img"></div>
+            </div>
+            <div id="bio-text">
+                <div id="bio-text-title">WELCOME</div>
+                <div id="bio-text-body">
+                    Hello there my name is Gabriel Schneider, I am a Madrid-based software developer fluent in the languages of Python, JavaScript, and Rust. My expertise extends beyond coding, as I have a keen interest in mathematics, often applying it to create captivating simulations. With a strong focus on artificial intelligence, deep learning, and spatial data processing, I can thrive on crafting innovative solutions and pushing the boundaries of technology. My passion for these fields, coupled with my knack for problem-solving, makes me a valuable asset in the tech landscape.
+                </div>
+            </div>
+        </div>
+
+        <!-- bio page projects section -->
+        <div id="bio-projects">
+
+            <div class="project-card">
+                <div id="project-card-thumb">
+                    <div id="thumb-image"></div>
+                </div>
+                <div id="project-card-text">
+                    <div id="project-card-title">Project 1</div>
+                    <div id="project-card-description">Awesome Description.</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div id="project-card-thumb">
+                    <div id="thumb-image"></div>
+                </div>
+                <div id="project-card-text">
+                    <div id="project-card-title">Project 2</div>
+                    <div id="project-card-description">Awesome Description.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- interval section -->
+    <div class="interval-section">
+        <!-- interval section icons goes here -->
+        <div id="interval-section-box">Interval Icons</div>
+    </div>
+    
+    <!-- articles section -->
+    <div class="articles">
+        
+        <div id="article-box">
+            
+            <div class="article-card">
+                <div class="card-img">
+                    <img src="./images/article1.jpg" alt="">
+                </div>
+                <div id="card-text">Coding Biological Systems, with Gene Expression and More</div>
+            </div>
+            
+            <div class="article-card">
+                <div class="card-img">
+                    <img src="./images/article2.jpg" alt="">
+                </div>
+                <div id="card-text">Mathematical Models for Disease Spreading Patterns</div>
+            </div>
+            
+            <div class="article-card">
+                <div class="card-img">
+                    <img src="./images/article3.jpg" alt="">
+                </div>
+                <div id="card-text">Chemical Simulations of Biological Processes, Protein Unfolding Approaches</div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    <!-- interval section -->
+    <div class="interval-section">
+        <!-- interval section icons goes here -->
+        <div id="interval-section-box">Interval Icons</div>
+    </div>
+
+    <!-- footer/contact section -->
+    <footer class="contact">
+        <div id="contact-call">
+            <div id="get-in-touch">LET'S CHAT</div>
+            <div id="contact-text">Got a project that needs a touch of genius? A collaboration that's just itching to shake the world? Don't be shy! Reach out and let's make some coding magic together!</div>
+            <button id="contact-button">Contact Me</button>
+        </div>
+        <div id="copyright">
+            <div id="copyright-message">
+                © <b>HOX</b>™ All Rights Reserved 2018 - 2023
+            </div>
+            <div id="creation-and-date">
+                Website created by <b>Gabriel Schneider</b>, on an ordinary week of August, 2023
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
